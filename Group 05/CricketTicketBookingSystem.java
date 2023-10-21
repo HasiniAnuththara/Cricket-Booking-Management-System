@@ -1,0 +1,103 @@
+import java.util.Scanner;
+
+class CricketTicketBookingSystem 
+{
+
+    public static void main(String[] args) 
+	{
+
+        // Display menu
+        System.out.println("\n\n-------------------------------------------------------");
+        System.out.println("\tIndia Tour of SriLanka ODI Match Day 01");
+        System.out.println("-------------------------------------------------------");
+        System.out.println("\n\tMatch Date: 2023-10-24");
+        System.out.println("\tVenue: Pallekale, Kandy - SriLanka\n");
+        System.out.println("Available Seats:\n");
+        System.out.println("  Seat Area No.\t              Price");
+        System.out.println("-----------------\t ----------------\n");
+        System.out.println("      1\t                    Rs.1500.00");
+        System.out.println("      2\t                    Rs.6000.00");
+        System.out.println("      3\t                    Rs.7000.00");
+        System.out.println("      4\t                    Rs.8000.00");
+        System.out.println("      5\t                    Rs.10000.00");
+        System.out.println("\n-------------------------------------------------------\n");
+        System.out.println("Please enter the seat area number you want to book: ");
+
+        // Get user input for seat number
+        Scanner sc = new Scanner(System.in);
+        int seatNumber = sc.nextInt();
+
+        // Validate user input for seat number
+		/*The code you provided is an if statement. 
+		It checks if the value of the variable seatNumber is less than 1 or greater than 5. 
+		If it is, then the code inside the curly braces is executed. Otherwise, the code inside the curly braces is skipped.
+		This if statement is typically used to validate a user input. */
+        if (seatNumber < 1 || seatNumber > 5) 
+		{
+            System.out.println("\nInvalid seat number. Please enter a valid seat number: ");
+            seatNumber = sc.nextInt();
+        }
+
+        // Calculate total price
+        int price = 0;
+        switch (seatNumber) 
+		{
+            case 1:
+                price = 1500;
+                break;
+            case 2:
+                price = 6000;
+                break;
+            case 3:
+                price = 7000;
+                break;
+            case 4:
+                price = 8000;
+                break;
+            case 5:
+                price = 10000;
+                break;
+        }
+
+        // Ask user for quantity of tickets
+        System.out.println("\nPlease enter the quantity of tickets: ");
+        int quantity = sc.nextInt();
+
+        // Calculate total price for booked tickets
+        int totalPrice = price * quantity;
+
+        // Display payment methods
+        System.out.println("\nPlease select a payment method: ");
+        System.out.println("\t1. Credit Card");
+        System.out.println("\t2. Debit Card");
+        System.out.println("\t3. Pay-Pal");
+
+        // Get user input for payment method
+        int paymentMethod = sc.nextInt();
+		
+		if (paymentMethod < 1 || paymentMethod > 3) 
+		{
+            System.out.println("\nInvalid number. Please enter a valid number: ");
+            paymentMethod = sc.nextInt();
+        }
+
+        // Process payment
+        switch (paymentMethod) 
+		{
+            case 1:
+                // Process credit card payment
+                break;
+            case 2:
+                // Process debit card payment
+                break;
+            case 3:
+                // Process net banking payment
+                break;	
+        }
+
+        // Display success message
+        System.out.println("\nThank you for booking tickets. Your tickets have been booked successfully.");
+        System.out.println("Total price paid: Rs." + totalPrice);
+		System.out.println("-----------------------------------------------------------------------------");
+    }
+}
